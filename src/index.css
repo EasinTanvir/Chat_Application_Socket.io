@@ -1,13 +1,268 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* --#1877f2 */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.auth {
+  height: 91vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.main {
+  height: 373px;
+  width: 1000px;
+  margin-top: 6rem;
+  display: flex;
+  gap: 4rem;
+}
+.text1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bolder;
+  color: #1877f2;
+  font-size: 24px;
+}
+.btnss {
+  background-color: #1877f2;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+  padding: 0px 10px;
+  margin-top: 1rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left h2 {
+  color: #1877f2;
+  font-size: 45px;
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.left p {
+  width: 75%;
+  font-size: 24px;
+  color: black;
+}
+
+.box {
+  width: 396px;
+  height: 350px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+}
+/* .chat {
+  overflow: hidden;
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.btns {
+  position: fixed;
+  margin-left: 2rem;
+  margin-top: 21rem;
+}
+
+.chat-l {
+  min-height: 89vh;
+  flex: 2;
+  border-radius: 5px;
+  background-color: rgba(197, 130, 130, 0.1);
+}
+.chat-r {
+  flex: 9;
+  border-radius: 5px;
+}
+
+.carts {
+  cursor: pointer;
+}
+
+.carts h4 {
+  font-weight: bolder;
+}
+.carts p {
+  font-size: 14px;
+}
+.chat .chat-r .headers {
+  height: 3rem;
+}
+.texts {
+  margin-top: 1rem;
+  position: relative;
+  overflow-y: scroll;
+  min-height: 77vh;
+  margin-bottom: 5rem;
+}
+
+.t-right {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 8px;
+}
+.times {
+  font-size: 14px;
+}
+.t-right p {
+  font-size: 16px;
+  background-color: #1877f2;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+.inputs {
+  position: fixed;
+  bottom: 1rem;
+  width: 75%;
+} */
+
+img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.messenger {
+  height: 91vh;
+  display: flex;
+}
+
+.chatMenu {
+  flex: 3;
+}
+.menuwrapper {
+  padding: 10px;
+  height: 100%;
+}
+.chatBox {
+  flex: 8;
+}
+.boxwrapper {
+  padding: 10px;
+  height: 100%;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+.messageTop {
+  display: flex;
+}
+.message img {
+  margin-right: 5px;
+}
+.messageTop p {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #1877f2;
+  color: white;
+  max-width: 400px;
+}
+.messageBottom {
+  font-size: 12px;
+  margin-top: 4px;
+}
+.message.own {
+  align-items: flex-end;
+}
+.message.own p {
+  background-color: lightgray;
+  color: black;
+}
+.chatBottom {
+  margin-top: 15px;
+}
+.chatTop {
+  height: 87%;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+.inputs {
+  height: 50px;
+  width: 80%;
+  margin-right: -10rem;
+}
+.carts {
+  cursor: pointer;
+}
+.c-menu {
+  position: fixed;
+  bottom: 2rem;
+}
+.c-menu button {
+  margin-left: 4rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .left h2 {
+    font-size: 35px;
+  }
+  .auth {
+    min-height: 100vh;
+  }
+  .text {
+    text-align: center;
+  }
+  .text h2 {
+    margin-right: 3rem;
+  }
+  .text p {
+    width: 50%;
+    margin-left: 14rem;
+    text-align: justify;
+  }
+
+  .main {
+    width: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .left p {
+    margin-left: 10rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .left p {
+    margin-left: 6rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .messenger {
+    display: flex;
+    flex-direction: column;
+  }
+  .chatTop {
+    height: 60%;
+  }
+
+  .navs {
+    display: none;
+  }
+  .left h2 {
+    font-size: 30px;
+  }
+  .text p {
+    font-size: 18px;
+    margin-left: 6rem;
+  }
+  .carts {
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    background-color: #1877f2;
+  }
 }

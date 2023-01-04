@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  unstable_HistoryRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import AuthPage from "./pages/AuthPage";
+import HomePage from "./pages/HomePage";
+import history from "./history";
+import Layout from "./components/Layout";
+import { useSelector } from "react-redux";
 
-function App() {
+const App = () => {
+  const {
+    user: { token },
+  } = useSelector((state) => state.auth);
+
+  let user;
+
+  if (token) {
+    user = (
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    );
+  } else {
+    user = (
+      <Routes>
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="*" element={<Navigate to="/auth" replace />} />
+      </Routes>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Layout>{user}</Layout>
+    </Router>
   );
-}
+};
 
 export default App;
